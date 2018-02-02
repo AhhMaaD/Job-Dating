@@ -1,0 +1,33 @@
+<ion-content padding>
+
+    <button class="back" top left ion-fab mini (tap)="goBack()">
+        <ion-icon name="md-arrow-back" ></ion-icon>
+    </button>
+
+    <h1 style="text-align: center;    margin-top: 60px;">
+        Liste des développeurs atypiques
+    </h1>
+
+    <ion-list no-lines>
+        <ion-card *ngFor="let user of list_users">
+            <ion-item>
+                <ion-avatar item-start>
+                    <img src={{user.photoUser}}>
+                </ion-avatar>
+                <h2>{{user.userName}}</h2>
+                <button ion-button (tap)="goToProfil(user) ">
+                Regarder
+              </button>
+            </ion-item>
+            <ion-card-content>
+
+
+                <span class="text ">{{user.Phrase_d_accroche}}</span>
+
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+
+</ion-content>
+
+<p class="footer">Powered by AhMaD ALI 2018 ® ©</p>

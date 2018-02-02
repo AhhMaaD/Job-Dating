@@ -1,0 +1,26 @@
+page-page-dasboard-pro {
+    .item-md,
+    .item-ios {
+        padding-left: 0px;
+        ion-avatar img {
+            width: 55px;
+            height: 55px;
+        }
+        ion-avatar[item-start] {
+            margin: 10px 10px 10px 10px;
+        }
+    }
+    .rating {
+        ion-icon {
+            font-size: 15px;
+            padding: 0px 1px !important;
+            background: none;
+            color: color($colors, primary);
+        }
+    }
+    .text {
+        color: #000;
+        font-family: 'Times New Roman';
+        text-align: center;
+    }
+}

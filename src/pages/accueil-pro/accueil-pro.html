@@ -1,0 +1,60 @@
+<ion-content parallax-header no-bounce class="bg-modal">
+    <div class="header-image"></div>
+    <div class="main-content" text-wrap text-center>
+        <div class="circular"></div>
+        <h1>Bienvenue</h1>
+        <p>Sur l'application du JobDating des CDAM</p>
+        <p class="profile-description">Description</p>
+        <button ion-button color="primary" (tap)="goToDash()">Accéder aux CV</button>
+
+        <ion-list>
+            <ion-item text-center>
+                <h3>Qui sommes nous ?</h3>
+                <p>Pour cette journée « Job Dating » vous rencontrerez 9 bénéficiaires de la POEC Concepteur développeur d’applications mobiles, le 7 février prochain.
+                </p>
+                <br>
+            </ion-item>
+
+
+            <ion-item no-lines text-center>
+                <h3>Déroulement</h3>
+                <p text-left>
+                    <b>10h00-10h30 :</b> Accueil des entreprises et partenaires
+                    <br>
+                    <b> 10h30-12h00 :</b> Table ronde autour de trois thématiques emploi
+                    <br>
+                    <b> 12h15-13h15 :</b> Déjeuner
+                    <br>
+                    <b> 13h30-15h30 :</b> Job dating
+                </p>
+
+
+
+            </ion-item>
+
+            <ion-item text-center>
+                <div class="map-image"></div>
+
+                <ion-item text-center>
+                    <ion-icon color="subtle" large item-start [name]='card.placeIcon'></ion-icon>
+                    <h2>{{card.placeName}}</h2>
+                    <p>{{card.placeAddress}}</p>
+                </ion-item>
+                <ion-item actions>
+                    <span item-start ion-text color="secondary" class="item-bold">{{card.ETA}}</span>
+                    <span item-start ion-text color="subtle">{{card.distance}}</span>
+                    <button ion-button color="primary" clear item-end icon-left (click)="getDirections(card)">
+            <ion-icon name='navigate'></ion-icon>
+            J'y vais
+          </button>
+                </ion-item>
+            </ion-item>
+
+        </ion-list>
+        <button ion-button color="primary" (tap)="goToDash()">Accéder aux CV</button>
+
+
+
+    </div>
+
+</ion-content>

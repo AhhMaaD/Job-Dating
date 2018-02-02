@@ -1,0 +1,144 @@
+<ion-header class="top_accueil">
+
+
+
+    <div class="accueil">
+        Profile
+    </div>
+
+</ion-header>
+
+
+<ion-content class="fond" padding>
+
+
+    <div class="bloc_principal">
+
+        <div class="profil">
+
+            <div class="portrait">
+                <img class="portrait" src="{{user_valide.photoUser}}" />
+            </div>
+
+            <div class="text_1"> <strong>{{user_valide.userName}}</strong></div>
+            <br>
+            <div class="text_2"> {{user_valide.metier}}</div>
+            <div class="text_2"> {{user_valide.Phrase_d_accroche}}</div>
+            <a href="{{user_valide.Linkedin}}" button ion-button block color="linkedin" icon-start>
+                <ion-icon name='logo-linkedin'></ion-icon>
+                LinkedIn
+            </a>
+            <a href="https://github.com/" button ion-button block color="linkedin" icon-start>
+                <ion-icon name='logo-githup'></ion-icon>
+                GitHub
+            </a>
+
+        </div>
+
+        <hr>
+        <br>
+        <div class="bloc_gris">
+            <div class="competence">
+                <ion-title><strong>Competences </strong></ion-title>
+                <hr>
+                <br> {{user_valide.competence1}}
+
+                <hr>
+
+                <br> {{user_valide.competence2}}
+
+                <hr>
+
+                <br> {{user_valide.competence3}}
+            </div>
+            <br>
+            <br>
+
+        </div>
+
+        <hr>
+
+        <div class="bloc_gris">
+            <div class="competence">
+
+                <ion-title><strong> Informations personelles </strong> </ion-title>
+                <hr>
+                <br> {{user_valide.userName}}
+                <br>
+
+                <a button ion-button block color="linkedin" href="mailto:{{user_valide.mail}}" item-end medium>
+                    <ion-icon name="mail" color="primary" item-start></ion-icon>
+                    {{user_valide.mail}}</a>
+
+                <br>
+                <a button ion-button block color="linkedin" href="tel:{{user_valide.telephone}}" item-end medium>
+                    <ion-icon item-start name="call" color="danger"></ion-icon>
+                    {{user_valide.telephone}}</a>
+                <br>Date de naissance : {{user_valide.dateDeNaissance}}
+                <br> Adresse : {{user_valide.adresse}}, {{user_valide.ville}}, {{user_valide.codePostal}}
+                <br> Sex :{{user_valide.userSex}}
+            </div>
+
+        </div>
+        <hr>
+
+        <div class="bloc_gris">
+            <div class="competence">
+                <ion-title><strong>Experiences  </strong> </ion-title>
+                <hr>
+                <br> {{user_valide.experience1}}
+
+                <hr>
+
+                <br> {{user_valide.experience2}}
+
+                <hr>
+
+                <br> {{user_valide.experience3}}
+                <br>
+                <br>
+            </div>
+        </div>
+        <hr>
+
+        <div class="bloc_gris">
+            <div class="competence">
+                <ion-title> <strong>Formations :</strong> </ion-title>
+                <hr>
+                <br> {{user_valide.formation1}}
+
+                <hr>
+
+                <br> {{user_valide.formation2}}
+
+                <hr>
+
+                <br> {{user_valide.formation3}}
+                <br>
+                <br>
+            </div>
+
+        </div>
+
+        <br>
+
+        <hr>
+
+
+
+        <button ion-button block color="linkedin" (click)="onOpenPdf()">CV complète en forme PDF</button>
+
+
+        <br>
+
+
+    </div>
+
+
+    <div class="footer_1">
+        <button ion-button block color="linkedin" (tap)="goToDash()">Accéder aux CV</button>
+
+        <button *ngIf="isConected()" ion-button block color="linkedin" (click)="signout()"><p>Deconnexion</p></button>
+        <button *ngIf="!isConected()" ion-button block color="linkedin" (click)="signout()"><p>Accueil</p></button>
+    </div>
+</ion-content>

@@ -1,0 +1,182 @@
+<ion-content parallax-header no-bounce class="bg-modal">
+
+
+    <button class="back" top left ion-fab mini (tap)="goBack()">
+        <ion-icon name="md-arrow-back" ></ion-icon>
+    </button>
+    <div class="header-image">
+
+    </div>
+    <div class="main-content" text-wrap text-center></div>
+    <div class="circular">
+        <ion-fab bottom edge>
+
+        </ion-fab>
+    </div>
+
+    <form [formGroup]="signUpForm" role="form">
+        <ion-item>
+            <ion-label floating>Mail</ion-label>
+            <ion-input type="email" required formControlName="mail"></ion-input>
+        </ion-item>
+
+        <div no-lines *ngIf="signUpForm.get('mail').dirty 
+        || signUpForm.get('mail').hasError('required')
+        || signUpForm.get('mail').hasError('email')
+         && signUpForm.get('mail').touched">
+
+            <p class="error" *ngIf="signUpForm.get('mail').hasError('email') && signUpForm.get('mail').touched">
+                Veuillez entrer un email valide ex:loginForm@AFPA.fr
+            </p>
+            <p class="error" *ngIf="signUpForm.get('mail').hasError('required') && signUpForm.get('mail').touched">
+                email est requis
+            </p>
+        </div>
+        <ion-item>
+            <ion-label floating>Mot de pass</ion-label>
+            <ion-input type="password" required formControlName="passWord"></ion-input>
+        </ion-item>
+        <div no-lines *ngIf="signUpForm.get('passWord').hasError('required')
+        || signUpForm.get('passWord').hasError('minlength')
+        || signUpForm.get('passWord').hasError('maxlength')
+        && signUpForm.get('passWord').touched
+        ">
+            <p class="error" *ngIf="signUpForm.get('passWord').hasError('required') && signUpForm.get('passWord').touched">
+                Mote de passe est requis
+            </p>
+            <p class="error" *ngIf="signUpForm.get('passWord').hasError('minlength')  && signUpForm.get('passWord').touched">
+                Veuillez entrer un mot de passe valid avec au moins 8 caractères
+            </p>
+            <p class="error" *ngIf="signUpForm.get('passWord').hasError('maxlength')  && signUpForm.get('passWord').touched">
+                Veuillez entrer un mot de passe valid avec moins que 12 caractères
+            </p>
+
+        </div>
+
+        <ion-item>
+            <ion-label floating>Nom et pronom</ion-label>
+            <ion-input type="text" required formControlName="userName"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <button ion-button full (click)="selectPhoto()">Ajouter votre photo</button>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Date De Naissance</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" formControlName="dateDeNaissance"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Ville</ion-label>
+            <ion-input type="text" required formControlName="ville"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Code Postal</ion-label>
+            <ion-input type="number" required formControlName="codePostal"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Adresse</ion-label>
+            <ion-input type="text" required formControlName="adresse"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Téléphone</ion-label>
+            <ion-input type="number" required formControlName="telephone"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Sex</ion-label>
+            <ion-select formControlName="userSex">
+                <ion-option value="Homme">Homme</ion-option>
+                <ion-option value="Femme">Femme</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <hr>
+        <ion-title> Profile professionnel CV</ion-title>
+        <hr>
+        <ion-item>
+            <br />
+
+            <br />
+            <label ion-button full> <input type="file"
+	        (change)="selectFile($event)">
+           </label>
+            <br />
+            <button ion-button full [disabled]="!selectedFiles" (click)="upload()">Télécharger votre CV</button>
+            <br />
+            <div *ngIf="currentFileUpload" class="progress" style="width:400px">
+                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+                    {{progress.percentage}}%</div>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Métier</ion-label>
+            <ion-input type="text" required formControlName="metier"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Phrase d'accroche</ion-label>
+            <ion-input type="text" formControlName="Phrase_d_accroche"></ion-input>
+        </ion-item>
+
+
+        <hr>
+        <ion-title> Compétences</ion-title>
+        <hr>
+        <ion-item>
+            <ion-label>1 : </ion-label>
+            <ion-input type="text" required formControlName="competence1"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>2 : </ion-label>
+            <ion-input type="text" formControlName="competence2"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>3 : </ion-label>
+            <ion-input type="text" formControlName="competence3"></ion-input>
+        </ion-item>
+
+
+        <hr>
+        <ion-title> Expériences</ion-title>
+        <hr>
+        <ion-item>
+            <ion-label>1 : </ion-label>
+            <ion-input type="text" required formControlName="experience1"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>2 : </ion-label>
+            <ion-input type="text" formControlName="experience2"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>3 : </ion-label>
+            <ion-input type="text" formControlName="experience3"></ion-input>
+        </ion-item>
+
+
+        <hr>
+        <ion-title> Formations</ion-title>
+        <hr>
+        <ion-item>
+            <ion-label>1 : </ion-label>
+            <ion-input type="text" required formControlName="formation1"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>2 : </ion-label>
+            <ion-input type="text" formControlName="formation2"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>3 : </ion-label>
+            <ion-input type="text" formControlName="formation3"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Linkedin</ion-label>
+            <ion-input type="text" formControlName="Linkedin"></ion-input>
+        </ion-item>
+
+
+        <br />
+        <button class="btn" ion-button full color="homey" [disabled]="!signUpForm.valid" (click)="signUp()" role="button" type="submit">Créer votre compte</button>
+    </form>
+
+</ion-content>

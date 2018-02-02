@@ -1,0 +1,8 @@
+{
+  "globalDependencies": {
+    "cordova-plugin-camera": "registry:dt/cordova-plugin-camera#0.0.0+20160819210047",
+    "cordova-plugin-file": "registry:dt/cordova-plugin-file#0.0.0+20160916224823",
+    "cordova-plugin-file-transfer": "registry:dt/cordova-plugin-file-transfer#0.0.0+20160916155957",
+    "firebase": "registry:dt/firebase#2.4.1+20160510002910"
+  }
+}

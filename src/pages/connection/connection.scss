@@ -1,0 +1,33 @@
+page-connection {
+    .error {
+        color: red;
+        font-weight: 900;
+        display: flex;
+        text-align: left;
+    }
+    a,
+    p,
+    ion-card-header.card-header {
+        color: rgb(226, 102, 65);
+    }
+    .list>.item-block:first-child {
+        border: medium none;
+    }
+    .item {
+        margin-bottom: 10px;
+        background: rgba(150, 122, 122, 0.5);
+        border: medium none;
+        .text-input,
+        {
+            color: rgb(12, 12, 12);
+        }
+    }
+    ion-card {
+        background: #dcd2d2;
+    }
+    .bottom {
+        position: relative;
+        color: #000;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,146 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.bloc_principal {
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 30px;
+    padding: 25px 10px;
+}
+
+.bloc_professionnel {
+    background: rgb(226, 226, 226);
+    height: 100px;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    zoom: 1;
+    text-align: center;
+    font-size: 45px;
+}
+
+.bloc_professionnel:hover {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    zoom: 1;
+}
+
+// TITRE DE PAGE
+h1 {
+    font-family: 'Times New Roman';
+    color: color($colors, primary);
+}
+
+h3 {
+    font-family: 'Times New Roman';
+    color: color($colors, primary);
+}
+
+span {
+    font-family: 'Times New Roman';
+    color: rgb(218, 226, 197);
+}
+
+// BACKGROUND DE LA PAGE
+.fond {
+    background-image: linear-gradient(110deg, rgb(105, 105, 105), rgb(158, 158, 158));
+}
+
+// BLOC BARRE DE NAVIGATION DU HAUT GRISE
+.top_accueil {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: rgb(111, 111, 111);
+}
+
+.burger {
+    height: 50px;
+    position: absolute;
+}
+
+.accueil {
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    color: white;
+}
+
+// BLOC BARRE DE NAVIGATION DU HAUT  ROUGE
+.top_connexion {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: rgb(211, 44, 44);
+}
+
+// BARRE DE FORMULAIRE
+.barre {
+    height: 35px;
+    width: 100%;
+}
+
+// BOUTTON FORMULAIRE
+.boutton {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    height: 50px;
+    background-image: linear-gradient(110deg, rgb(73, 73, 73), rgb(206, 203, 203));
+    width: 175px;
+}
+
+// fORMULAIRE ?
+.formulaire {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.boutton_connexion {
+    text-align: center;
+}
+
+
+/* // FOOTER
+ion-footer img {
+    height: 30px;
+} */
+
+ion-col {
+    text-align: center;
+}
+
+.footer {
+    z-index: 0 !important;
+    position: fixed;
+    height: 7px;
+    text-align: center;
+    line-height: 0px !important;
+    background: transparent;
+    bottom: 15px;
+    width: 100%;
+}
+
+.back {
+    left: 0px;
+    position: absolute;
+    top: 21px;
+    z-index: 125;
+    width: 44px !important;
+    height: 38px !important;
+    cursor: pointer;
+}
