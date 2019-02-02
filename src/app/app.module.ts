@@ -24,10 +24,10 @@ import { PdfViewerModule } from "ng2-pdf-viewer";
 
   // Initialize Firebase
 firebase.initializeApp({
-  apiKey: "AIzaSyAfEE1UT0e3SQeXjL1o3lX-nidKlu3hCjM",
-  authDomain: "jobdating-5f379.firebaseapp.com",  
-  databaseURL: "https://jobdating-5f379.firebaseio.com",
-  projectId: "jobdating-5f379",
+  apiKey: "********************************",
+  authDomain: "***************************",  
+  databaseURL: "********************************",
+  projectId: "*********",
   storageBucket: "jobdating-5f379.appspot.com",
   messagingSenderId: "719574510416"
 });
